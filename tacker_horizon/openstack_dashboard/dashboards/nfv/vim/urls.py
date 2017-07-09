@@ -13,15 +13,14 @@
 # under the License.
 
 
-from django.conf.urls import patterns
 from django.conf.urls import url
 
 from tacker_horizon.openstack_dashboard.dashboards.nfv.vim import views
 
 
-urlpatterns = patterns(
+urlpatterns = [
     'tacker_horizon.openstack_dashboard.dashboards.nfv.vim.views',
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^registervim$', views.RegisterVIMView.as_view(), name='registervim'),
     url(r'^(?P<vim_id>[^/]+)/$', views.DetailView.as_view(), name='detail'),
-)
+]

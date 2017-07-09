@@ -11,15 +11,14 @@
 # under the License.
 
 
-from django.conf.urls import patterns
 from django.conf.urls import url
 
 from tacker_horizon.openstack_dashboard.dashboards.nfv.nsmanager import views
 
 
-urlpatterns = patterns(
+urlpatterns = [
     'tacker_horizon.openstack_dashboard.dashboards.nfv.nsmanager.views',
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^deployns$', views.DeployNSView.as_view(), name='deployns'),
     url(r'^(?P<ns_id>[^/]+)/$', views.DetailView.as_view(), name='detail'),
-)
+]
