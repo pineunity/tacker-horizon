@@ -16,9 +16,7 @@ from django.conf.urls import url
 from tacker_horizon.openstack_dashboard.dashboards.nfv.vnffgcatalog \
     import views
 
-
 urlpatterns = [
-    'tacker_horizon.openstack_dashboard.dashboards.nfv.vnffgcatalog.views',
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^onboardvnffg', views.OnBoardVNFFGView.as_view(),
         name='onboardvnffg'),
